@@ -1,5 +1,5 @@
 {
-  "name": "watermark",
+  "name": "@tanzhen/watermark",
   "version": "1.0.0",
   "description": "自定义水印",
   "main": "index.js",
@@ -11,5 +11,9 @@
   "devDependencies": {
     "@types/node": "^22.13.10",
     "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "@types/lodash": "^4.17.16",
+    "lodash": "^4.17.21"
   }
 }
