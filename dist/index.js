@@ -1,3 +1,4 @@
+"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -45,8 +46,10 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-import { throttle } from "lodash";
-var Watermark = /** @class */ (function () {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Watermark = void 0;
+var lodash_1 = require("lodash");
+var Watermark = (function () {
     function Watermark(targetDom, config) {
         this.renderLock = false;
         this.config = {
@@ -70,7 +73,7 @@ var Watermark = /** @class */ (function () {
                 canvas.height = 2000;
                 this.writeText(canvas);
                 imgData = canvas.toDataURL('image/png');
-                return [2 /*return*/, imgData];
+                return [2, imgData];
             });
         });
     };
@@ -84,15 +87,13 @@ var Watermark = /** @class */ (function () {
                         if (watermarkDom) {
                             watermarkDom === null || watermarkDom === void 0 ? void 0 : watermarkDom.remove();
                         }
-                        // 给父元素添加定位
                         if (!this.targetDom.style.position) {
                             this.targetDom.style.position = 'relative';
                         }
-                        // 创建canvas块
                         this.watermarkFrame = document.createElement('div');
-                        if (!!this.watermarkImg) return [3 /*break*/, 2];
+                        if (!!this.watermarkImg) return [3, 2];
                         _a = this;
-                        return [4 /*yield*/, this._getCanvasImg()];
+                        return [4, this._getCanvasImg()];
                     case 1:
                         _a.watermarkImg = _b.sent();
                         _b.label = 2;
@@ -100,7 +101,7 @@ var Watermark = /** @class */ (function () {
                         this.watermarkFrame.style = "width:100%;height:100%;position:absolute;top:0;left:0;z-index:9999;pointer-events:none;overflow:hidden;background-repeat:repeat;background-image:url(".concat(this.watermarkImg, ")");
                         this.watermarkFrame.classList.add('watermark-frame');
                         this.targetDom.appendChild(this.watermarkFrame);
-                        return [2 /*return*/];
+                        return [2];
                 }
             });
         });
@@ -114,15 +115,11 @@ var Watermark = /** @class */ (function () {
             return false;
         var text = config.text;
         ctx.font = "".concat(config.fontSize, "px Arial");
-        // 获取文本的宽度
         var metrics = ctx.measureText(text);
         var textWidth = metrics.width;
         var textHeight = 10;
-        // 旋转角度（弧度）
         var radian = (config.rotate * Math.PI) / 180;
-        // 旋转文本
         ctx.rotate(radian);
-        // ctx.translate(canvas.width / 2, canvas.height / 2)
         ctx.fillStyle = "rgba(".concat(config.rgb.join(','), ",").concat(config.opacity, ")");
         var numX = (canvas.width * 2) / textWidth;
         var numY = (canvas.height * 2) / textHeight;
@@ -148,21 +145,18 @@ var Watermark = /** @class */ (function () {
     Watermark.prototype.start = function () {
         var _this = this;
         this.render();
-        var throttleRender = throttle(function () {
+        var throttleRender = (0, lodash_1.throttle)(function () {
             _this.render();
         }, 1000);
-        // 监听DOM变化
         var mObserver = new MutationObserver(function (mutations, observer) {
             var isReRender = mutations.some(function (mutation) {
                 if ('childList' == mutation.type && mutation.removedNodes.length > 0) {
-                    // 防删
                     return Array.from(mutation.removedNodes).some(function (node) {
                         var d = node;
                         return d.classList && d === _this.watermarkFrame;
                     });
                 }
                 else if (mutation.type == 'attributes' && mutation.target == _this.watermarkFrame) {
-                    // 防隐藏
                     return true;
                 }
             });
@@ -176,4 +170,4 @@ var Watermark = /** @class */ (function () {
     };
     return Watermark;
 }());
-export { Watermark };
+exports.Watermark = Watermark;

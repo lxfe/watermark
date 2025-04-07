@@ -1,6 +1,6 @@
 {
   "name": "@tanzhen08/watermark",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "自定义水印",
   "main": "dist/index.js",
   "scripts": {
@@ -11,6 +11,7 @@
     "src/index.ts"
   ],
   "types": "dist/index.d.ts",
+  "type": "module",
   "author": "tanzhen08",
   "license": "Apache-2.0",
   "devDependencies": {

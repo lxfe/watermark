@@ -1,4 +1,4 @@
-import { debounce, throttle } from "lodash";
+import { throttle } from "lodash";
 
 export interface IWatermarkConfig{
     // 文字内容

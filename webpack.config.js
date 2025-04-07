@@ -1,26 +1,28 @@
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
-  entry: './src/index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
-  },
-  resolve: {
-    extensions: ['.ts', '.js'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts$/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-              presets: ['@babel/preset-env','@babel/preset-typescript']
+export default {
+    mode:"production",
+    entry: './src/index.ts',
+    output: {
+        path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist'),
+        filename: 'index.js',
+    },
+    resolve: {
+        extensions: ['.ts', '.js'],
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(ts|js)$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-typescript','@babel/preset-env']
+                    }
+                },
+                exclude: /node_modules/
             }
-          },
-        exclude: /node_modules/,
-      }
-    ],
-  }
+        ],
+    }
 };
