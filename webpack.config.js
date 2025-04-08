@@ -7,6 +7,9 @@ export default {
     output: {
         path: path.resolve(path.dirname(fileURLToPath(import.meta.url)), 'dist'),
         filename: 'index.js',
+        libraryTarget:"umd",
+        library:"Watermark",
+        globalObject: "this",
     },
     resolve: {
         extensions: ['.ts', '.js'],
