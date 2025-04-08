@@ -1,7 +1,25 @@
 {
     "presets": [
-        [
-            "@babel/preset-env"
-        ]
+      [
+        "@babel/preset-env",
+        {
+          // 编译目标告诉 Babel 要为哪些环境或浏览器版本生成兼容的 JavaScript 代码
+          "targets": {
+            "edge": "80",
+            "firefox": "60",
+            "chrome": "67",
+            "ie": "11"
+          },
+          // 选项告诉 Babel 如何处理那些在目标环境中不支持的新特性
+          "useBuiltIns": "usage", // 按需引入
+          // 指定使用core-js库的版本
+          "corejs": "3"
+        }
+      ]
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-transform-runtime"
+      ]
     ]
-}
+  }
