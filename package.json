@@ -1,6 +1,6 @@
 {
   "name": "@tanzhen08/watermark",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "自定义水印",
   "scripts": {
     "build": "rollup -c",
