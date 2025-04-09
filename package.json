@@ -1,6 +1,6 @@
 {
   "name": "@tanzhen08/watermark",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "水印工具，支持自定义配置(包括文字，大小，位置，颜色，间距等)，并且支持：防止删除/防止隐藏元素",
   "scripts": {
     "build": "rollup -c",

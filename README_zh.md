@@ -1,6 +1,6 @@
 <h2 align="center">Watermark<br/>水印</h2>
 
-**其他语言版本: [English](README.md), [中文](README_zh.md).**
+**其他语言版本: [English](https://github.com/lxfe/watermark/blob/main/README.md), [中文](https://github.com/lxfe/watermark/blob/main/README_zh.md).**
 
 # Watermark class
 
