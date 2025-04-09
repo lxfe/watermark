@@ -17,6 +17,6 @@ export declare class Watermark {
     _initDom(): Promise<void>;
     constructor(targetDom: HTMLElement, config?: Partial<IWatermarkConfig>);
     private writeText;
-    render(): false | undefined;
+    render(): boolean;
     start(): void;
 }

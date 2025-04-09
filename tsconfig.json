@@ -1,26 +1,16 @@
 {
-    "exclude": ["node_modules", "dist", "test"],
-    "include": ["src/**/*"],
-    "compilerOptions": {
-    "module": "esnext", // 编译过程中使用的模块系统，none commonjs umd esnext
-    "rootDir": ".", // 源代码根目录，告诉TypeScript 编译器从哪个目录开始查找和处理源代码文件
-    "baseUrl": "./", // 用于指定模块解析的基础路径
-    "declaration": true, // 生成声明文件
-    "emitDeclarationOnly": false, // 是否只生成声明文件
-    "outDir": "./dist", // 类型声明输出目录
-    "declarationDir": "./dist/types", // 声明文件输出目录
-    "target": "es6", // 编译的目标版本
-    "lib": ["es6", "dom"], // 指定编译目标环境所支持的特性集合
-    "allowJs": true, // 允许ts检查js文件
-    "skipLibCheck": true, // 跳过默认的类型检查
-    "esModuleInterop": true, // 允许使用export=语法
-    "allowSyntheticDefaultImports": true, // 允许在没有default导出的模块中使用import x from ''语法
-    "strict": true,
-    "forceConsistentCasingInFileNames": true, // 启用全局严格大小写检查
-    "moduleResolution": "node", // 启用模块解析器
-    "sourceMap": true, // 生成sourcemap
-    "noEmit": false, // 需要要输出文件
-    "isolatedModules": true, // 每个文件都是一个模块，与编译器有关
-    "noFallthroughCasesInSwitch": true // // 检查switch中的所有case是否都有break语句
-  }
+  "compilerOptions": {
+    "rootDir": "./src",
+    "lib": ["ESNext", "DOM"],
+    "target": "ESNext",
+    "strict": false,
+    "allowJs": true,
+    "checkJs": true,
+    "noEmit": true,
+    "declarationDir": "./dist/types",
+    "declaration": true,
+    "esModuleInterop": true,
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "tests", "dist", "documentation"]
 }
