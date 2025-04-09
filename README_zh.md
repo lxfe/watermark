@@ -1,5 +1,7 @@
 <h2 align="center">Watermark<br/>水印</h2>
 
+**其他语言版本: [English](README.md), [中文](README_zh.md).**
+
 # Watermark class
 
 这是一个用于在网页上创建水印的 TypeScript 类。

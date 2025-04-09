@@ -1,5 +1,7 @@
 <h2 align="center">Watermark<br/>水印</h2>
 
+**Read this in other languages: [English](README.md), [中文](README_zh.md).**
+
 # Watermark Class
 
 This is a TypeScript class for creating a watermark on a web page.

@@ -1,7 +1,7 @@
 {
   "name": "@tanzhen08/watermark",
-  "version": "1.0.8",
-  "description": "自定义水印",
+  "version": "1.0.9",
+  "description": "水印工具，支持自定义配置(包括文字，大小，位置，颜色，间距等)，并且支持：防止删除/防止隐藏元素",
   "scripts": {
     "build": "rollup -c",
     "test": "jest"
@@ -12,6 +12,7 @@
   "files": [
     "dist"
   ],
+  "keywords": ["watermark","水印","typescript","dom"],
   "type": "module",
   "author": "tanzhen08",
   "license": "Apache-2.0",
